@@ -13,7 +13,7 @@ export const App = () => {
 
     const normalizedQuery = searchQuery.toLowerCase().trim();
 
-    const filteredMovies = movies.filter((movie) => {
+    const filteredMovies = movies.filter(movie => {
       const normalizedTitle = movie.title.toLowerCase();
       const normalizedDescription = movie.description.toLowerCase();
 
@@ -24,10 +24,9 @@ export const App = () => {
     });
 
     return filteredMovies;
-    };
+  }
 
-  const visibleMovies= filterMovies(moviesFromServer, query);
-
+  const visibleMovies = filterMovies(moviesFromServer, query);
 
   return (
     <div className="page">
@@ -46,7 +45,7 @@ export const App = () => {
                 className="input"
                 placeholder="Type search word"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={e => setQuery(e.target.value)}
               />
             </div>
           </div>
